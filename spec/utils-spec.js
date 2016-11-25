@@ -83,6 +83,10 @@ describe('dc utils', function () {
             var date = add(makeDate(2012, 0, 1), '24', 'hour');
             expect(date.toString()).toEqual(makeDate(2012, 0, 2).toString());
         });
+        it('should be able to add weeks to dates', function() {
+            var date = add(makeDate(2012, 0, 1), '1', 'week');
+            expect(date.toString()).toEqual(makeDate(2012, 0, 8).toString());
+        });
         it('should be able to add month to dates', function () {
             var date = add(makeDate(2012, 0, 1), '1', 'month');
             expect(date.toString()).toEqual(makeDate(2012, 1, 1).toString());
@@ -113,9 +117,17 @@ describe('dc utils', function () {
             var date = subtract(makeDate(2012, 0, 11), '10%');
             expect(date.toString()).toEqual(makeDate(2012, 0, 1).toString());
         });
+        it('should be able to subtract hours from dates', function () {
+            var date = subtract(makeDate(2012, 0, 2), '24', 'hour');
+            expect(date.toString()).toEqual(makeDate(2012, 0, 1).toString());
+        });
+        it('should be able to subtract week from dates', function() {
+            var date = subtract(makeDate(2012, 0, 8), '1', 'week');
+            expect(date.toString()).toEqual(makeDate(2012, 0, 1).toString());
+        });
         it('should be able to subtract month from dates', function () {
             var date = subtract(makeDate(2012,1,1), '1', 'month');
-            expect(date.toString()).toEqual(makeDate(2012,0,1).toString());
+            expect(date.toString()).toEqual(makeDate(2012, 0, 1).toString());
         });
     });
 });

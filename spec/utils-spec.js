@@ -79,6 +79,14 @@ describe('dc utils', function () {
             var date = add(makeDate(2012, 0, 1), '10%');
             expect(date.toString()).toEqual(makeDate(2012, 0, 11).toString());
         });
+        it('should be able to add hours to dates', function () {
+            var date = add(makeDate(2012, 0, 1), '24', 'hour');
+            expect(date.toString()).toEqual(makeDate(2012, 0, 2).toString());
+        });
+        it('should be able to add month to dates', function () {
+            var date = add(makeDate(2012, 0, 1), '1', 'month');
+            expect(date.toString()).toEqual(makeDate(2012, 1, 1).toString());
+        });
     });
     describe('dc.utils.subtract', function () {
         var subtract;
@@ -105,6 +113,9 @@ describe('dc utils', function () {
             var date = subtract(makeDate(2012, 0, 11), '10%');
             expect(date.toString()).toEqual(makeDate(2012, 0, 1).toString());
         });
+        it('should be able to subtract month from dates', function () {
+            var date = subtract(makeDate(2012,1,1), '1', 'month');
+            expect(date.toString()).toEqual(makeDate(2012,0,1).toString());
+        });
     });
 });
-

@@ -209,7 +209,7 @@ module.exports = function (grunt) {
                         },
                         {
                             browserName: 'MicrosoftEdge',
-                            version: '20.10240',
+                            version: '14',
                             platform: 'Windows 10'
                         }
                     ],
@@ -437,5 +437,6 @@ module.exports.jsFiles = [
     'src/heatmap.js',
     'src/d3.box.js',
     'src/box-plot.js',
+    'src/select-menu.js',
     'src/footer.js'  // NOTE: keep this last
 ];
